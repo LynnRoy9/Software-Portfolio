@@ -20,7 +20,7 @@ import { FAQ } from "@/components/faq";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen pt-10">
+    <main className="flex flex-col min-h-screen pt-5">
       {/* Hero Section */}
       <section
         id="home"
@@ -41,8 +41,9 @@ export default function Home() {
           >
             <div className="w-full h-full rounded-full overflow-hidden bg-slate-900 border-4 border-slate-50 dark:border-slate-950 relative">
               <Image
-                src="https://picsum.photos/seed/profile/400/400"
+                src="/images/profile.jpg"
                 alt="Elangwe Lynn-Roy Dinyangi"
+                quality={30}
                 fill
                 className="object-cover"
                 referrerPolicy="no-referrer"
@@ -251,14 +252,14 @@ export default function Home() {
                   </p>
                   <div className="flex items-center gap-4">
                     <a
-                      href="#"
+                      href="https://github.com/LynnRoy9"
                       className="p-3 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:scale-105 transition-all text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
                     >
                       <Github className="w-5 h-5" />
                       <span className="sr-only">GitHub</span>
                     </a>
                     <a
-                      href="#"
+                      href="https://linkedin.com/in/lynn-roy-dinyangi"
                       className="p-3 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:scale-105 transition-all text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
                     >
                       <Linkedin className="w-5 h-5" />
