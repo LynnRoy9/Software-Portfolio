@@ -1,7 +1,14 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import {
+  ArrowRight,
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+} from "lucide-react";
 import Image from "next/image";
 import { Skills } from "@/components/skills";
 import { Projects } from "@/components/projects";
@@ -9,14 +16,15 @@ import { ContactForm } from "@/components/contact-form";
 import { ResumeButton } from "@/components/resume-button";
 import { Testimonials } from "@/components/testimonials";
 import { Stats } from "@/components/stats";
+import { FAQ } from "@/components/faq";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen pt-20">
+    <main className="flex flex-col min-h-screen pt-10">
       {/* Hero Section */}
       <section
         id="home"
-        className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-12 py-10 lg:py-24 relative"
+        className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-12 py-20 lg:py-32 relative"
       >
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-500/10 blur-[100px] rounded-full pointer-events-none"></div>
         <motion.div
@@ -139,48 +147,135 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto text-center w-full relative z-10"
+          className="max-w-6xl mx-auto w-full relative z-10"
         >
-          <h2 className="text-3xl sm:text-4xl font-extrabold mb-6 text-slate-900 dark:text-white">
-            Get In Touch
-          </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400 mb-12 text-balance leading-relaxed">
-            Whether you have a question, a project in mind, or just want to say
-            hi, my inbox is always open. I'll try my best to get back to you!
-          </p>
-
-          <div className="mb-16">
-            <ContactForm />
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-extrabold mb-6 text-slate-900 dark:text-white">
+              Get In Touch
+            </h2>
+            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-balance leading-relaxed">
+              Whether you have a question, a project in mind, or just want to
+              say hi, my inbox is always open. I'll try my best to get back to
+              you!
+            </p>
           </div>
 
-          <div className="flex items-center justify-center gap-6">
-            <a
-              href="#"
-              className="p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-lg shadow-slate-200/50 dark:shadow-slate-900/50 hover:shadow-indigo-500/20 hover:-translate-y-1 transition-all text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
-            >
-              <Github className="w-6 h-6" />
-              <span className="sr-only">GitHub</span>
-            </a>
-            <a
-              href="#"
-              className="p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-lg shadow-slate-200/50 dark:shadow-slate-900/50 hover:shadow-indigo-500/20 hover:-translate-y-1 transition-all text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
-            >
-              <Linkedin className="w-6 h-6" />
-              <span className="sr-only">LinkedIn</span>
-            </a>
-            <a
-              href="#"
-              className="p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-lg shadow-slate-200/50 dark:shadow-slate-900/50 hover:shadow-indigo-500/20 hover:-translate-y-1 transition-all text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
-            >
-              <Mail className="w-6 h-6" />
-              <span className="sr-only">Email</span>
-            </a>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <ContactForm />
+            </div>
+
+            {/* Address & Socials Section */}
+            <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl shadow-slate-200/50 dark:shadow-slate-900/50 h-full min-h-[400px] flex flex-col p-8 lg:p-10">
+              {/* Map Background */}
+              <div
+                className="absolute inset-0 z-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none"
+                style={{
+                  backgroundImage:
+                    'url("https://www.transparenttextures.com/patterns/cartographer.png")',
+                }}
+              ></div>
+              <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
+                <Image
+                  src="https://picsum.photos/seed/map/800/800"
+                  alt="Map Background"
+                  fill
+                  className="object-cover blur-[2px] grayscale"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="absolute inset-0 z-0 bg-gradient-to-br from-white/90 to-white/70 dark:from-slate-900/95 dark:to-slate-900/80"></div>
+
+              <div className="relative z-10 flex flex-col h-full justify-between">
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-8">
+                    Contact Information
+                  </h3>
+
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 bg-indigo-50 dark:bg-indigo-500/10 rounded-xl text-indigo-600 dark:text-indigo-400">
+                        <Mail className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
+                          Email
+                        </p>
+                        <a
+                          href="mailto:elangwelynnroy9@gmail.com"
+                          className="text-lg font-semibold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                        >
+                          elangwelynnroy9@gmail.com
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 bg-indigo-50 dark:bg-indigo-500/10 rounded-xl text-indigo-600 dark:text-indigo-400">
+                        <Phone className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
+                          Phone
+                        </p>
+                        <a
+                          href="tel:+237698927731"
+                          className="text-lg font-semibold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                        >
+                          +(237) 698-927-731
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 bg-indigo-50 dark:bg-indigo-500/10 rounded-xl text-indigo-600 dark:text-indigo-400">
+                        <MapPin className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
+                          Location
+                        </p>
+                        <p className="text-lg font-semibold text-slate-900 dark:text-white">
+                          Molyko, Buea
+                          <br />
+                          South West, Cameroon
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
+                  <p className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-4">
+                    Connect with me
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <a
+                      href="#"
+                      className="p-3 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:scale-105 transition-all text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
+                    >
+                      <Github className="w-5 h-5" />
+                      <span className="sr-only">GitHub</span>
+                    </a>
+                    <a
+                      href="#"
+                      className="p-3 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:scale-105 transition-all text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
+                    >
+                      <Linkedin className="w-5 h-5" />
+                      <span className="sr-only">LinkedIn</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
 
         {/* Bottom Accent Line */}
         <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 via-cyan-500 to-indigo-500 opacity-20"></div>
       </section>
+
+      <FAQ />
     </main>
   );
 }
