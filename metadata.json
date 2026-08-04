@@ -1,0 +1,6 @@
+{
+  "name": "Personal Portfolio",
+  "description": "A professional, responsive personal portfolio web application.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
