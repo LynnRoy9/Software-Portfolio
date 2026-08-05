@@ -62,15 +62,15 @@ export function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-2">
-            <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center font-bold text-white">
+            {/* <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center font-bold text-white">
               P
-            </div>
+            </div> */}
             <a
               href="#home"
               onClick={handleScroll}
               className="text-xl font-bold tracking-tight text-slate-900 dark:text-white"
             >
-              Portfolio
+              Lynn-Roy D.
             </a>
           </div>
 
