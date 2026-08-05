@@ -34,7 +34,7 @@ export function ResumeButton({
         <Download
           className={`${isNav ? "w-4 h-4" : "w-5 h-5"} animate-bounce`}
         />
-        {isNav ? "CV" : "Downloading..."}
+        {isNav ? "" : "Downloading..."}
       </span>
     </motion.a>
   );
