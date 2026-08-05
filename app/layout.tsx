@@ -53,7 +53,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ScrollProgress />
+          {/* <ScrollProgress /> */}
           <Navbar />
           {children}
           <Footer />

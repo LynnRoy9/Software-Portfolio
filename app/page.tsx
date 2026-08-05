@@ -20,11 +20,11 @@ import { FAQ } from "@/components/faq";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen pt-5">
+    <main className="flex flex-col min-h-screen pt-5 overflow-x-hidden">
       {/* Hero Section */}
       <section
         id="home"
-        className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-12 py-20 lg:py-32 relative"
+        className="flex-1 overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6 lg:px-12 py-20 lg:py-32 relative"
       >
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-500/10 blur-[100px] rounded-full pointer-events-none"></div>
         <motion.div
